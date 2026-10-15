@@ -6,5 +6,9 @@ import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 
 @Composable
+fun FormDataDiri(modifier: Modifier){
+    //variable2 untuk mengingat nilai masukan dri keyboard
+    var textName by remember { mutableStateOf(value="") }
+    var textAlamat by remember { mutableStateOf(value="") }
 
 }
