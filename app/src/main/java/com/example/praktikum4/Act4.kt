@@ -30,13 +30,27 @@ import androidx.compose.ui.unit.dp
 
 @Composable
 fun FormDataDiri(modifier: Modifier){
-    //variable2 untuk mengingat nilai masukan dri keyboard
-    var textName by remember { mutableStateOf(value="") }
-    var textAlamat by remember { mutableStateOf(value="") }
-    var textJK by remember { mutableStateOf(value="") }
-    var gender:List<String> = listOf("laki-laki", "Perempuan")
+    //variabel-variabel untuk mengingat nilai masukan dari keyboard
+    var textNama by remember { mutableStateOf(value = "") }
+    var textAlamat by remember { mutableStateOf(value = "") }
+    var textJK by remember { mutableStateOf(value = "") }
+    val gender:List<String> = listOf("Laki-laki","Perempuan")
 
     //variabel-variabel untuk menyimpan data yang diperoleh dari komponen UI
-    var nama by remember { mutableStateOf(value = "")}
-    var alamat by remember { mutableStateOf(value = "")}
-    var jenis by remember { mutableStateOf(value = "")}
+    var nama by remember { mutableStateOf(value = "") }
+    var alamat by remember { mutableStateOf(value = "") }
+    var jenis by remember { mutableStateOf(value = "") }
+
+    Column(modifier = Modifier.padding(top = 50.dp),
+        verticalArrangement = Arrangement.Top,
+        horizontalAlignment = Alignment.CenterHorizontally) {
+        OutlinedTextField(
+            value = textNama,
+            singleLine = true,
+            shape = MaterialTheme.shapes.large,
+            modifier = Modifier.width(250.dp),
+            label = { Text(text = "Nama Lengkap") },
+            onValueChange = {
+                textNama = it
+            }
+        )
